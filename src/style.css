@@ -27,6 +27,9 @@ li {
   flex-direction: column;
   flex: 1;
   gap: 1rem;
+  border: 2px solid black;
+  padding: 0.5rem;
+  border-radius: 8px;
 }
 
 .leftside {
@@ -35,6 +38,9 @@ li {
   gap: 1rem;
   margin-top: 2rem;
   flex: 1;
+  border: 2px solid black;
+  padding: 0.5rem;
+  border-radius: 8px;
 }
 
 .score {
@@ -50,5 +56,24 @@ li {
 
 .li {
   display: flex;
+  border-radius: 4px;
+  padding: 0.5rem;
   justify-content: space-between;
+}
+
+.li:nth-child(even) {
+  background-color: rgb(231, 231, 231);
+}
+
+input {
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+button {
+  padding: 0.5rem;
+  width: fit-content;
+  border-radius: 4px;
+  align-self: flex-end;
+  cursor: pointer;
 }

@@ -24,7 +24,5 @@ if (!localStorage.getItem('gameId')) {
 }
 
 window.onload = () => {
-  // getGameId();
-  // postData(getGameIdFromLocalStorage);
   displayData();
 };
