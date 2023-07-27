@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import './style.css';
 import getdata from './module/getdata.js';
-import { postData, displayData } from './module/postdata.js';
+import { postData, displayData, getGameIdFromLocalStorage } from './module/postdata.js';
 
 const getGameId = async () => {
   const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';
@@ -24,5 +24,7 @@ if (!localStorage.getItem('gameId')) {
 }
 
 window.onload = () => {
+  // getGameId();
+  // postData(getGameIdFromLocalStorage);
   displayData();
 };

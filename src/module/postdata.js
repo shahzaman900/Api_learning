@@ -6,6 +6,7 @@ const submit = document.getElementById('btn');
 const ul = document.getElementById('ul');
 const refresh = document.getElementById('refresh');
 
+export const getGameIdFromLocalStorage = localStorage.getItem('gameId');
 export const postData = async (gameId) => {
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores`;
   const response = await fetch(url, {
@@ -21,12 +22,10 @@ export const postData = async (gameId) => {
   return response.json();
 };
 
-export const getGameIdFromLocalStorage = localStorage.getItem('gameId');
-
-const data = await getdata(getGameIdFromLocalStorage);
-const games = data.result;
 export const displayData = async () => {
   ul.innerHTML = '';
+  const data = await getdata(getGameIdFromLocalStorage);
+  const games = data.result;
   games.forEach((game) => {
     ul.innerHTML += `
       <li class='li'>
@@ -42,7 +41,8 @@ submit.addEventListener('click', () => {
 });
 
 refresh.addEventListener('click', () => {
+  // postData(getGameIdFromLocalStorage);
   displayData();
 });
 
-export default postData;
+// export default postData;
