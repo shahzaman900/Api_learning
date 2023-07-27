@@ -41,8 +41,5 @@ submit.addEventListener('click', () => {
 });
 
 refresh.addEventListener('click', () => {
-  // postData(getGameIdFromLocalStorage);
   displayData();
 });
-
-// export default postData;
